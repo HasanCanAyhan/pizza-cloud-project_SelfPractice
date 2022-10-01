@@ -13,6 +13,7 @@ import java.util.UUID;
 @RequestMapping("/orders")
 public class OrderController {
 
+    /*
     private final PizzaRepository pizzaRepository;
 
     public OrderController(PizzaRepository pizzaRepository) {
@@ -47,4 +48,7 @@ public class OrderController {
         return new Pizza();
     }
 
+
+
+     */
 }
