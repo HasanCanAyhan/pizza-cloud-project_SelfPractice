@@ -36,7 +36,7 @@ public class OrderController {
 
 
     @PostMapping("/{pizzaId}")
-    public String processOrder(@PathVariable("pizzaId") String pizzaId, @ModelAttribute("pizzaOrder") PizzaOrder pizzaOrder) {
+    public String processOrder(@PathVariable("pizzaId") UUID pizzaId, @ModelAttribute("pizzaOrder") PizzaOrder pizzaOrder) {
 
         // Save the order
 
