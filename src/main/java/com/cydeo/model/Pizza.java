@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.UUID;
 
 @Data
-@Component
 public class Pizza {
 
     private UUID id;

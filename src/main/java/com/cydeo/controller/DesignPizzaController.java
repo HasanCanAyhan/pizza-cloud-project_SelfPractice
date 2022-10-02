@@ -38,6 +38,8 @@ public class DesignPizzaController {
         pizza.setId(UUID.randomUUID());
         pizzaRepository.createPizza(pizza);
 
+        System.out.println(pizzaRepository.readAll().get(0));
+
         return "redirect:/orders/current?pizzaId=" + pizza.getId();
 
 

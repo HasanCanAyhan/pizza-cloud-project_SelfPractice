@@ -36,11 +36,13 @@ public class OrderController {
 
 
     @PostMapping("/{pizzaId}")
-    public String processOrder(@PathVariable("pizzaId") UUID pizzaId, @ModelAttribute("pizzaOrder") PizzaOrder pizzaOrder) {
+    public String processOrder(@PathVariable UUID pizzaId, @ModelAttribute("pizzaOrder") PizzaOrder pizzaOrder) {
 
         // Save the order
+        pizzaRepository.createPizza(pizzaOrder.getPizza());
 
-        //pizzaOrder.setPizza(getPizza(pizzaId));
+
+        pizzaOrder.setPizza(getPizza(pizzaId));
         return "redirect:/home";
     }
 
