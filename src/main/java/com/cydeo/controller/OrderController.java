@@ -27,12 +27,9 @@ public class OrderController {
 
         //Fix the getPizza method below in line 49.
 
-        try {
             pizzaOrder.setPizza(getPizza(pizzaId));
             System.out.println("pizzaId = " + pizzaId);
-        }catch (RuntimeException e){
-            System.out.println( e.getMessage() );
-        }
+
 
 
         model.addAttribute("pizzaOrder", pizzaOrder);
@@ -46,7 +43,7 @@ public class OrderController {
     public String processOrder(@PathVariable UUID pizzaId, @ModelAttribute("pizzaOrder") PizzaOrder pizzaOrder) {
 
         // Save the order
-        pizzaRepository.createPizza(pizzaOrder.getPizza());
+        //if you want to save this order, you should create another repository to save this order
 
 
         pizzaOrder.setPizza(getPizza(pizzaId));
@@ -61,7 +58,7 @@ public class OrderController {
     }
 
     //TODO
-    private Pizza getPizza(UUID pizzaId) {
+    private Pizza getPizza(UUID pizzaId) throws PizzaNotFoundException {
         // Get the pizza from repository based on it's id
 
         return pizzaRepository.readAll().stream()
@@ -72,6 +69,8 @@ public class OrderController {
     }
 
 
+    //pizzaOrder.setName(asd)
+    //pizzaOrder.setPizza(null) // Note: If there is no field in the form , this will run
 
 
 }

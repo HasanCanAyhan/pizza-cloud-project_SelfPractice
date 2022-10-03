@@ -14,6 +14,8 @@ import java.util.UUID;
 @Controller
 public class DesignPizzaController {
 
+    //ctrl-shift f : to search in the application ex:UUID
+
     private final PizzaRepository pizzaRepository;
 
     public DesignPizzaController(PizzaRepository pizzaRepository) {
