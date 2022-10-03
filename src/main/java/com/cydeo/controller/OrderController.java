@@ -26,7 +26,14 @@ public class OrderController {
         PizzaOrder pizzaOrder = new PizzaOrder();
 
         //Fix the getPizza method below in line 49.
-        pizzaOrder.setPizza(getPizza(pizzaId));
+
+        try {
+            pizzaOrder.setPizza(getPizza(pizzaId));
+            System.out.println("pizzaId = " + pizzaId);
+        }catch (RuntimeException e){
+            System.out.println( e.getMessage() );
+        }
+
 
         model.addAttribute("pizzaOrder", pizzaOrder);
 
@@ -43,6 +50,12 @@ public class OrderController {
 
 
         pizzaOrder.setPizza(getPizza(pizzaId));
+
+        System.out.println("Pizza Order : " );
+        System.out.println(pizzaOrder.getPizza());
+        System.out.println(pizzaOrder.getDeliveryName());
+        System.out.println(pizzaOrder.getDeliveryCity());
+
         return "redirect:/home";
     }
 
