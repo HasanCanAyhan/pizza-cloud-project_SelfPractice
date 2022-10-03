@@ -53,6 +53,7 @@ public class OrderController {
         System.out.println(pizzaOrder.getDeliveryName());
         System.out.println(pizzaOrder.getDeliveryCity());
 
+        System.out.println("------------------------------------------");
 
         return "redirect:/home";
     }
