@@ -40,7 +40,8 @@ public class DesignPizzaController {
 
         System.out.println("pizza = " + pizza);
 
-        return "redirect:/orders/current?pizzaId=" + pizza.getId() ;
+
+        return "redirect:/orders/current?pizzaId=" +  pizza.getId() ;
 
 
     }
