@@ -34,10 +34,11 @@ public class DesignPizzaController {
 
     }
 
-    @PostMapping("/design")
+    @PostMapping("/design") // submit your pizza button inside the form
     public String processPizza(@ModelAttribute("pizza") Pizza pizza) {
 
         pizza.setId(UUID.randomUUID());
+        // because pizzaId which is unique does not exist in submit pizza form, you should first set the id
         pizzaRepository.createPizza(pizza);
 
         System.out.println("pizza = " + pizza);

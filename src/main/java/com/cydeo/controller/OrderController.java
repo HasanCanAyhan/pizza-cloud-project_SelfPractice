@@ -46,7 +46,23 @@ public class OrderController {
         //if you want to save this order, you should create another repository to save this order
 
 
-        pizzaOrder.setPizza(getPizza(pizzaId));
+        pizzaOrder.setPizza(getPizza(pizzaId)); // one more time : because inside submit order form we don't have pizza object
+        //pizzaOrder.setName(asd)
+        //pizzaOrder.setPizza(null) // Note: If there is no field in the form , this will run
+        /* NOTE:
+            private String deliveryName;
+            private String deliveryStreet;
+            private String deliveryCity;
+            private String deliveryState;
+            private String deliveryZip;
+            private String ccNumber;
+            private String ccExpiration;
+            private String ccCVV;
+            private Pizza pizza; ONLY , IN THE FORM WE DON'T HAVE IT !!!
+         */
+
+
+
 
         System.out.println("Pizza Order : " );
         System.out.println(pizzaOrder.getPizza());
